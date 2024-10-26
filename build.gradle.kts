@@ -38,7 +38,7 @@ java {
 }
 
 application {
-    mainClass = "language.klox.KLox"
+    mainClass = "klox.KLox"
 }
 
 tasks {

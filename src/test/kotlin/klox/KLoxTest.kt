@@ -1,4 +1,4 @@
-package language.klox
+package klox
 
 import assertk.assertThat
 import assertk.assertions.*
