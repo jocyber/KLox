@@ -1,9 +1,18 @@
 package klox
 
+import java.io.File
+import java.net.URI
+import klox.tokenizer.Scanner
+
 object KLox {
+    // TODO: add a REPL
     @JvmStatic
     fun main(args: Array<String>) {
-        // have a run method that takes in a string from either a source file or a REPL input
-        println("Hello world from KLox!!")
+        val sourceFile = File(args[1])
+        val tokens = Scanner(sourceFile.readText()).scan()
+
+        tokens.forEach {
+            println("${it.type} ${it.value?.let { "-> $it" } ?: ""}")
+        }
     }
 }
