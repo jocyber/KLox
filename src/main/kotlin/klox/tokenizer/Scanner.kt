@@ -85,6 +85,7 @@ class Scanner(private val source: String) {
 
     private fun atEnd() = current >= source.length
 
+    /** Consumes the next character and increments the lookahead. */
     private fun advance() = source[current++]
 
     private fun peek(): Char? = if (atEnd()) null else source[current]
