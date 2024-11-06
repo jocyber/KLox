@@ -1,7 +1,7 @@
 package klox
 
 import java.io.File
-import java.net.URI
+import klox.parser.Parser
 import klox.tokenizer.Scanner
 
 object KLox {
@@ -10,9 +10,8 @@ object KLox {
     fun main(args: Array<String>) {
         val sourceFile = File(args[1])
         val tokens = Scanner(sourceFile.readText()).scan()
+        val ast = Parser(tokens).parse()
 
-        tokens.forEach {
-            println("${it.type} ${it.value?.let { "-> $it" } ?: ""}")
-        }
+        println(ast)
     }
 }

@@ -74,7 +74,7 @@ class Scanner(private val source: String) {
 
     private fun addToken(type: TokenType) = addToken(type, "")
 
-    private fun addToken(type: TokenType, lexeme: String) = 
+    private fun addToken(type: TokenType, lexeme: String) =
         tokens.add(Token(type, line, lexeme, null))
 
     private fun match(expectedChar: Char): Boolean {
@@ -116,7 +116,7 @@ class Scanner(private val source: String) {
             advance()
 
             when {
-                peek() == null -> { 
+                peek() == null -> {
                     addErrorToken("$line: Unexpected end of input")
                     return
                 }
